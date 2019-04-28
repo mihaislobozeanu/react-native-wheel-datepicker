@@ -43,5 +43,8 @@
     "android": {
       "packageInstance": "new ReactNativeWheelPickerPackage()"
     }
+  },
+  "publishConfig": {
+    "registry": "https://nexus.dudes.local/repository/npm-forks/"
   }
 }
