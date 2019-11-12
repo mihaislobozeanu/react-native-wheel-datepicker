@@ -44,8 +44,18 @@ export default class Picker extends Component {
     this.props.onValueChange(selectedValue);
   };
 
+  /*
   componentWillReceiveProps({ selectedValue }) {
     this.setState({ selectedValue });
+  }
+  */
+
+  //replace componentWillReceiveProps
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (prevState.selectedValue !== nextProps.selectedValue) {
+      return { selectedValue: nextProps.selectedValue };
+    }
+    return null;
   }
 
   render() {

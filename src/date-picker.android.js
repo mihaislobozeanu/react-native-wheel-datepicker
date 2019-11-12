@@ -84,12 +84,29 @@ export default class DatePicker extends PureComponent {
     }
   }
 
+  /*
   componentWillReceiveProps(nextProps) {
     if (this.state.date !== nextProps.date) {
       this.parseDate(nextProps.date);
 
       this.setState({ date: nextProps.date });
     }
+  }*/
+
+  //replace componentWillReceiveProps
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (prevState.date !== nextProps.date) {
+      return { date: nextProps.date };
+    }
+    return null;
+  }
+
+  //replace componentWillReceiveProps
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    if (prevState.date !== this.props.date) {
+      this.parseDate(this.props.date);
+    }
+    return null;
   }
 
   parseDate = (date) => {
