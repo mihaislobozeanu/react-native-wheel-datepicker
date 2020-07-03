@@ -37,12 +37,8 @@
   "peerDependencies": {
     "moment": ">=2.0.0",
     "prop-types": "*",
-    "react-native": ">=0.45.0"
-  },
-  "rnpm": {
-    "android": {
-      "packageInstance": "new ReactNativeWheelPickerPackage()"
-    }
+    "react-native": ">=0.62.0",
+    "@react-native-community/picker": ">=1.6.5"
   },
   "publishConfig": {
     "registry": "https://nexus.dudes.local/repository/npm-forks/"
